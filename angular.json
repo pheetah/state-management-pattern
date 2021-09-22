@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "stmgmtPattern"
+  "defaultProject": "stmgmtPattern",
+  "cli": {
+    "analytics": "adfefb63-a444-4252-92d7-62241aa91175"
+  }
 }

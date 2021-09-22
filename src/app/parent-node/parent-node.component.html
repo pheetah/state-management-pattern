@@ -1,0 +1,6 @@
+<p>parent-node works!</p>
+<ng-container *ngIf="state.findChild('subParent')">
+    <app-child-node
+        [state]="state.getChild('subParent')"
+    ></app-child-node>
+</ng-container>
