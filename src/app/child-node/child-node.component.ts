@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { StateModels } from '../state-management-tools/models/state-models';
 import { StateTree } from '../state-management-tools/structures/tree';
 
@@ -12,20 +12,25 @@ export class ChildNodeComponent implements OnInit {
   @Input() state = 
   new StateTree<StateModels.Resp2Model>() as StateTree<Pick<Partial<StateModels.StateModel>, 'stepParent'>>;
 
+  @Output() childClick = new EventEmitter();
+  
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  ngOnChanges(){
+  onChildDivClick(){
+    console.log('?')
+    this.childClick.emit();
     this.state.data.stepParent = {
-      stepChild: 'changed',
+      stepChild: 'yes it is wonderful',
       stepChild2: 1,
       stepChild3: []
     };
-    
-    //console.log(this.state)
+  }
 
+  ngOnChanges(){
+    console.log('are you curious?')
   }
 
 }

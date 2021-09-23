@@ -1,6 +1,7 @@
 <p>parent-node works!</p>
 <ng-container *ngIf="state.findChild('subParent')">
     <app-child-node
+        (childClick) = "onClickChild()"
         [state]="state.getChild('subParent')"
     ></app-child-node>
 </ng-container>

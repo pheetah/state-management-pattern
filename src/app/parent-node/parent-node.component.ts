@@ -3,6 +3,9 @@ import { ExampleService } from '../service/example-service.service';
 import { StateModels } from '../state-management-tools/models/state-models';
 import { StateTree } from '../state-management-tools/structures/tree';
 import { delay } from 'rxjs/operators';
+import { interval } from 'rxjs';
+
+const numbers = interval(2000);
 
 @Component({
   selector: 'app-parent-node',
@@ -18,6 +21,10 @@ export class ParentNodeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
+    numbers.subscribe(() => {
+      console.log(this.state)
+    })
 
     this.testService.emitResp1$.pipe(
       delay(2000)
@@ -35,6 +42,10 @@ export class ParentNodeComponent implements OnInit {
       //console.log(this.state)
     })
 
+  }
+
+  onClickChild(){
+    console.log(this.state);
   }
 
 }
