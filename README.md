@@ -1,4 +1,4 @@
-# A State Management Pattern - That Could Replace NGRXwith Better Configurability
+# A State Management Pattern - That Could Replace NGRX with Better Configurability
 
 ```typescript
 
